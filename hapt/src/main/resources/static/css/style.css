@@ -1,0 +1,141 @@
+/* start nav bar  */
+
+.bg-gradient-primary {
+  background-image: linear-gradient(
+    180deg,
+    #f2cd71 10%,
+    #224abe 100%
+  ) !important;
+}
+
+.col-xl-3 .card {
+  border-left: none !important;
+  background-color: rgb(250, 234, 7);
+}
+
+.col-xl-3 .card1 {
+  border-left: none !important;
+  background-color: #ffb765;
+}
+
+.col-xl-3 .card2 {
+  border-left: none !important;
+  background-color: #ff6565;
+}
+.text-xs {
+  font-size: 18px !important ;
+  color: white !important;
+}
+
+@media (min-width: 768px) {
+  .sidebar .nav-item .nav-link span {
+    font-size: 0.85rem;
+    display: inline;
+    color: #43425d;
+    font-size: 23px !important;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+.sidebar-dark .nav-item .nav-link i {
+  color: #43425d !important;
+  font-size: 27px !important;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .sidebar .sidebar-brand .sidebar-brand-text {
+    color: white;
+  }
+}
+
+.sidebar-dark .sidebar-brand {
+  color: #fff;
+  background-color: #43425d;
+}
+
+.sidebar .active {
+  background-color: white;
+  border-left: #43425d 16px solid;
+}
+.sidebar .nav-item:hover {
+  background-color: white;
+  border-left: #43425d 16px solid;
+}
+@media (max-width: 767px) {
+  .sidebar .nav-item .nav-link span {
+    font-size: 5px;
+  }
+}
+
+.sidebar .nav-item .nav-link span {
+  display: block;
+  font-size: 18px !important;
+  color: #43425d !important;
+}
+
+#lien-card {
+  text-decoration: none;
+}
+#dropuser {
+  margin: -1.22rem 0 0;
+}
+/* End navbar  */
+
+/* start liste classe  */
+
+.dropdown,
+.dropleft,
+.dropright,
+.dropup {
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #f2cd71 !important;
+  border-color: #f2cd71 !important;
+}
+.dropdown-item:hover {
+  background-color: #f2cd71 !important;
+  color: white !;
+}
+/* end liste classe  */
+
+/* start  table  */
+
+thead,
+tfoot {
+  background-color: #43425d;
+}
+tbody tr:nth-child(2n) {
+  background-color: white;
+}
+tbody tr:nth-child(2n + 1) {
+  background-color: #f2f7fb;
+}
+
+/* end table  */
+.form-input {
+  border-radius: 20px;
+  border: solid 2px #43425d;
+  height: 70%;
+  background-color: rgba(236, 236, 125, 0.651);
+}
+
+.column {
+  display: grid;
+  width: 40%;
+  height: 10vh;
+  color: white;
+  margin: 5px;
+}
+::placeholder {
+  color: #43425d;
+  font-size: 1em;
+}

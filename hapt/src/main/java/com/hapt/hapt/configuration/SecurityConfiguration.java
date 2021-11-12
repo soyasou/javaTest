@@ -12,9 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import javax.sql.DataSource;
 
 @Configuration
-/**
- * classe du configuration
- */
+/** classe du configuration */
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     /** import data source */
@@ -29,9 +27,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     /** debut security */
-
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated().and().formLogin().permitAll()
+        http.authorizeRequests().antMatchers("/css/**", "/img/**", "/login").permitAll().anyRequest().authenticated()
+                .and().formLogin().permitAll()
                 // Login form
                 .and().formLogin().loginPage("/login").usernameParameter("email").passwordParameter("password")
                 // Fail, forbidden and Success actions
@@ -43,6 +41,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 // CSRF disabling
                 .and().csrf().disable();
-
     }
 }
