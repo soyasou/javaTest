@@ -3,15 +3,29 @@
 th:with="lang=${#locale.language}"
 th:lang="${lang}">
 <head>
-    <div th:replace="fragments/sidebar :: head"/>
-    <meta charset="ISO-8859-1">
-        <title>Sign Up </title>
-        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+   
+ <!--<div th:replace="fragments/sidebar :: head"/>--> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title >Modifier formation Horizon Academy</title>
+        <!-- link style css  -->
+        <link rel="stylesheet" href="./css/style.css"/>
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    </head>
 </head>
-<body>
+<body id="page-top">
 
+    <!-- Page Wrapper -->
     <div id="wrapper">
         <div >
             <!-- Sidebar -->
@@ -22,12 +36,11 @@ th:lang="${lang}">
                    <div class="sidebar-brand-icon rotate-n-15">
                        <i class="fas fa-graduation-cap"></i>
                    </div>
-                   <div class="sidebar-brand-text mx-3">Horizon Acedmy </div>
+                   <div class="sidebar-brand-text mx-3" >Horizon Academy</div>
                </a>
                <!-- Nav Item - Dashboard -->
                <li class="nav-item ">
-                   <!--<a class="nav-link" th:href="@{/?lang=ar}"> -->
-                    <a class="nav-link">
+                   <a class="nav-link" th:href="@{/class}">
                        <i class="fas fa-fw fa-tachometer-alt"></i>
                        <span>Classe</span></a>
                </li>
@@ -55,7 +68,7 @@ th:lang="${lang}">
            
            
                <!-- Nav Item - Dashboard -->
-               <li class="nav-item  active" >
+               <li class="nav-item active">
                    <a class="nav-link" th:href="@{/etudiant}">
                        <i class="fas fa-fw fa-user-graduate"></i>
                        <span>Etudiant</span></a>
@@ -290,177 +303,183 @@ th:lang="${lang}">
 
                 </nav>
                 <!-- End of Topbar -->
-                <div class="container-fluid">
 
+                <!-- Begin Page Content -->
+                <!-- Content Row -->
+                <div class="row">
 
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <a th:href="@{/register}" id="lien-card">
-                                <div class="card border-left-primary shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col order-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"
-                                                    style=" color: white !important; " > 
-                                                    Ajouter etudiant
-                                                </div>
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <a th:href="@{/register}" id="lien-card">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col order-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                                                style=" color: white !important; " > 
+                                                Ajouter Etudiant
                                             </div>
-                                            <div class="col order-1 d-flex justify-content-center">
-                                                <i class="fas fa-list-ul fa-2x text-gray-300"></i>
-                                            </div>
+                                        </div>
+                                        <div class="col order-1 d-flex justify-content-center">
+                                            <i class="fas fa-list-ul fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <a th:href="@{/modif_etudiant}">
-                                <div class="card1 border-left-primary shadow h-100 py-2">
-                                    <div class="card1-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col order-2">
-                                                <div style=" color: white !important; "
-                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    Modifier etudiant</div>
-                                            </div>
-                                            <div class="col order-1 d-flex justify-content-center">
-                                                <i class="far fa-folder fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <a th:href="@{/supp_etudiant}">
-                                <div class="card2 border-left-primary shadow h-100 py-2">
-                                    <div class="card2-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col order-2 ">
-                                                <div style=" color: white !important; "
-                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    Supprimer etudiant</div>
-                                            </div>
-                                            <div class="col order-1 d-flex justify-content-center">
-                                                <i class="fas fa-user-clock fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
+                            </div>
                         </a>
                     </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <a th:href="@{/modif_etudiant}">
+                            <div class="card1 border-left-primary shadow h-100 py-2">
+                                <div class="card1-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col order-2">
+                                            <div style=" color: white !important; "
+                                                class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Modifier Etudiant</div>
+                                        </div>
+                                        <div class="col order-1 d-flex justify-content-center">
+                                            <i class="far fa-folder fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <a th:href="@{/supp_etudiant}">
+                            <div class="card2 border-left-primary shadow h-100 py-2">
+                                <div class="card2-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col order-2 ">
+                                            <div style=" color: white !important; "
+                                                class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Supprimer Etudiant</div>
+                                        </div>
+                                        <div class="col order-1 d-flex justify-content-center">
+                                            <i class="fas fa-user-clock fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </a>
+                </div>
+                <!-- /.container-fluid -->
+                 <!--start Table Etudiant -->
+<div>
+    <h1>Liste of User</h1>
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>User ID</th>
+                    <th>E-mail</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>Adresse</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user: ${listUsers}">
+                    <td th:text="${user.id}">User ID</td>
+                    <td th:text="${user.email}">E-mail</td>
+                    <td th:text="${user.name}">first-name</td>
+                    <td th:text="${user.prenom}">Last-name</td>
+                    <td th:text="${user.adresse}">Adresse</td>
+                    <td> 
+
+                        <a href="#" class="btn btn-info btn-lg">
+                       
+                            <i class="fas fa-trash"></i>
+                        </a>
+                       
+                         </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+   
+</div>
+
                   
 
+                   
 
+                   
+                   
+                    <!--end Table Etudiant -->
 
-    <div class="container text-center">
-        <div>
-            <h1>User Registration - Sign Up</h1>
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Horizon Acedmy 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
         </div>
-        <form th:action="@{/process_register}" th:object="${user}"
-            method="post" style="max-width: 600px; margin: 0 auto;">
+        <!-- End of Page Wrapper -->
 
-        <div class="m-3">
-            <div class="form-group row">
-                <label class="col-4 col-form-label">role: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{role}" class="form-control"
-                            required minlength="2" maxlength="20"/>
-                </div>
-            </div>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-
-            <div class="form-group row">
-                <label class="col-4 col-form-label">E-mail: </label>
-                <div class="col-8">
-                    <input type="email" th:field="*{email}" class="form-control" required />
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
                 </div>
-            </div>
-             
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Password: </label>
-                <div class="col-8">
-                    <input type="password" th:field="*{password}" class="form-control"
-                            required minlength="6" maxlength="10"/>
-                </div>
-            </div>
-             
-            <div class="form-group row">
-                <label class="col-4 col-form-label">name: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{name}" class="form-control"
-                            required minlength="2" maxlength="20"/>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-4 col-form-label">prenom: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{prenom}" class="form-control"
-                            required minlength="2" maxlength="20"/>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-4 col-form-label">adresse: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{adresse}" class="form-control"
-                            required minlength="2" maxlength="20"/>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-4 col-form-label">tel: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{tel}" class="form-control"
-                            required minlength="2" maxlength="20"/>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-4 col-form-label">cin: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{cin}" class="form-control"
-                            required minlength="2" maxlength="20"/>
-                </div>
-            </div>
-    
-            <div class="form-group row">
-                <label class="col-4 col-form-label">dateN: </label>
-                <div class="col-8">
-                    <input type="date" th:field="*{dateN}" class="form-control"
-                            />
-                </div>
-            </div>
-           
-            <div class="form-group row" hidden>
-                <label class="col-4 col-form-label">active: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{active}" class="form-control"
-                         value="1"   />
-                </div>
-            </div>
-             
-            <div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
             </div>
         </div>
-        </form>
 
-         <!-- Footer -->
-         <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Horizon Acedmy 2021</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
-    </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="js/demo/datatables-demo.js"></script>
+
 </body>
+
 </html>

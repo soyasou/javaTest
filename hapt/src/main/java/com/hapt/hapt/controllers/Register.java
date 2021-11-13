@@ -31,6 +31,7 @@ public class Register {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodePassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodePassword);
+        user.setActive(1);
         userRepository.save(user);
         return "login";
     }

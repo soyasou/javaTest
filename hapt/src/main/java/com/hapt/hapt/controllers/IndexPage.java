@@ -1,11 +1,23 @@
 package com.hapt.hapt.controllers;
 
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
+
+import com.hapt.hapt.models.User;
+import com.hapt.hapt.repositories.UserRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexPage {
+    @Autowired
+    UserRepository userRepository;
+
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String getIndex() {
         return "index";
@@ -46,8 +58,17 @@ public class IndexPage {
         return "modif_formation";
     }
 
-    @RequestMapping(path = "/modif_etudiant", method = RequestMethod.GET)
-    public String getModif_etudiant() {
+    @GetMapping(path = "/modif_etudiant")
+    public String listUsers(Model model) {
+        List<User> listUsers = userRepository.findAll();
+        model.addAttribute("listUsers", listUsers);
         return "modif_etudiant";
+    }
+
+    @GetMapping(path = "/supp_etudiant")
+    public String supplistUsers(Model model) {
+        List<User> listUsers = userRepository.findAll();
+        model.addAttribute("listUsers", listUsers);
+        return "supp_etudiant";
     }
 }
